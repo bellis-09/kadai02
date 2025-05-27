@@ -1,0 +1,308 @@
+
+@charset "utf-8";
+
+html {
+  height: 100%;
+}
+body {
+  position: relative;
+  padding-bottom: 75px;
+  min-height: 100%;
+
+}
+li {
+  list-style: none;
+}
+p, ul {
+  margin: 0;
+  padding: 0;
+}
+div,li {
+  box-sizing: border-box; /* paddingとborderを、要素のwidthとheightに含む */
+}
+.header_nav {
+  background: linear-gradient(90deg, #fff 20%, rgba(0,0,0,.6) 60%);
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: stretch;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* どの要素よりも上に来るように設定 */
+}
+.global_nav_item {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.global_nav li:hover {
+  background: #fff;
+  color: #42210b;
+}
+
+.global_nav li:hover .global_nav_item{
+  color: #42210b;
+}
+
+.global_nav {
+  display: flex;
+  align-items: center;
+  align-items: center; /* 縦方向の中央揃え */ 
+  justify-content: center; /* 横方向の中央揃え */
+  height: 100%;
+}
+
+.global_nav li{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  width: 100%;
+}
+.section_inner{ /* DIC Coffee のタイトルとサブタイトルがある箇所*/
+  display: flex;
+  flex-direction: column;  /*縦並び？横並び？*/
+  padding: 50px 10% 30px;
+  background-color: #fff;
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size:100%;
+  background-position: center;
+  justify-content: center;/* 左寄せ or 真ん中寄せ or 右寄せ*/
+  align-items: flex-start; /* 子要素をflex-directionと垂直方向にどう並べるか決める */;
+  height: 100%;
+  text-align:left; /* 水平方向にどう寄せるか */
+
+}
+
+.section_inner.menu{
+  background-image: url("../images/sample_menu_bg.jpg") ;
+}
+
+
+
+.key .section_inner p{
+  justify-content: center;
+
+}
+
+.section_inner img{
+  width: 80px;
+  float: right;
+  width: 35%;
+}
+
+.key {
+  height: 500px;
+  background: center / cover no-repeat url("../images/sample_key.jpg");
+  font-family: 'Noto Serif JP', serif;
+  font-weight: bold;
+  
+}
+.key h1{
+  font-size: 2.5rem;
+}
+
+h2{
+  font-size: 18px;
+}
+
+.section_title {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* ２.concept */
+
+.concept_body{
+  display: flex;
+  gap: 20px;
+}
+
+.concept_body.p1{
+  width: 60%;
+}
+
+.concept_body img{
+  width: 35%;
+}
+
+.section-title {
+  width: 200px;
+  position: absolute;
+  right: 20px;
+}
+
+.menu_title {
+  display: inline-block;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  color: #42210b;
+  border-bottom: solid #42210b 1px;
+  margin-bottom: 20px;
+}
+.center {
+  text-align: center;
+}
+
+/* おすすめメニュー（パンケーキ）のリスト */
+ul .recom_menu {
+  display: flex;
+  box-sizing: border-box;}
+
+/* パンケーキのメニューリストのセル。セルを49%の比率にした */
+.recom_menu li{
+  display: flex;
+  width: 49%;
+  background-color: #fff;
+  filter: drop-shadow(2px 2px 2px #808080);
+  height: 300px;
+  position: relative;
+  overflow: hidden; /*画像のはみ出し部分をカットする（隠す） */
+  /* filterの数字は左右上下の順番で書く。
+  この場合は左右２px、上下2px,、影の大きさが２px */
+}
+
+/* パンケーキのタイトル（h２） */
+.menutext h2{
+  font-family: 'Noto Serif JP', serif;
+}
+
+/* パンケーキの説明文 */
+.menutext{
+  display: flex;
+  text-align: center;
+  flex-direction: column; /* 縦に並べる */
+  justify-content: space-between; /* 上・真ん中・下に分ける */
+  padding: 10px;
+  height: 100%;
+  width: 51%;
+}
+
+/* パンケーキの写真 */
+img.coffee_menu_image{
+  width: 55%;
+  object-fit: cover; /* 画像をトリミングしつつセルいっぱいに載せる */
+  z-index: 1;
+}
+
+/* おすすめメニューの説明テキスト */
+.menu li{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* おすすめメニューの値段 */
+ul.recom_menu li p.menu_price{
+  text-align: right;
+}
+
+/* 通常メニューの表(ul) */
+ul.menu_2 {
+  display: flex;
+  flex-wrap: wrap; /*  */
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 通常メニューのリスト */
+.menu_2 li{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 49%;
+  padding: 20px;
+}
+
+/* セルのうち、メニューの名前と値段の部分 */
+/* _memuクラスのulのliにある.menunameクラスのdiv */
+.menu_2 li .menuname{
+  width: 80%;
+}
+
+/* 通常メニュー内の丸い写真 */
+.coffee_menu_image2{
+  width: 20%;
+  border-radius: 50%;
+  margin-right: 20px;
+
+}
+
+/* フッター */
+
+footer{
+ background-color:#251e19;
+ color: #fff;
+ height: 75px;
+ position:absolute;
+ bottom: 0;
+ width: 100%;
+}
+
+footer ul{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+}
+
+footer a{
+ color: #fff;
+ text-decoration: none;
+}
+
+ul{
+
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li img{
+  height: 30px;
+}
+
+nav a{
+margin-right: 20px;
+}
+
+footer p{
+  text-align: center;
+}
+
+.footer_nav{
+  margin: 50pxs;
+}
+
+iframe{
+  width: 100%;
+}
+
+dl{
+  display: flex;
+}
+
+dt{
+  width: 80px;
+}
+
+.copyright{
+  font-size: 12px;
+}
